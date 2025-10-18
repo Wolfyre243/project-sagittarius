@@ -1,8 +1,6 @@
 import { ThemeProvider } from '@/context/theme-provider';
 import type { Metadata } from 'next';
 import { Manrope, Inter } from 'next/font/google';
-
-// @ts-expect-error CSS Import
 import './globals.css';
 import { NavBar } from '@/components/navigation/nav-bar';
 import ClickSpark from '@/components/ClickSpark';
