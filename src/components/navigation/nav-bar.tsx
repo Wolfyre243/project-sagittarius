@@ -25,7 +25,7 @@ function NavBarItem({
 
 export function NavBar() {
   return (
-    <div className='absolute top-0 z-10 flex w-full flex-row items-center justify-center px-4 py-2'>
+    <div className='sticky top-0 z-10 flex w-full flex-row items-center justify-center px-4 py-2'>
       {/* Nav Items */}
       <nav className='bg-primary/20 backdrop-blur-2xl shadow-2xl flex w-fit flex-row items-center justify-center gap-8 rounded-full px-20 py-1.5'>
         {NavItems.map((navItem: NavItem) => (

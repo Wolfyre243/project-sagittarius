@@ -7,15 +7,15 @@ export type NavItem = {
 export const NavItems: NavItem[] = [
   {
     title: 'Home',
-    url: '/',
+    url: '/#hero',
   },
   {
     title: 'About',
-    url: '/about',
+    url: '/#about',
   },
   {
     title: 'Contact',
-    url: '/contact',
+    url: '/#contact',
   },
   {
     title: 'Projects',
