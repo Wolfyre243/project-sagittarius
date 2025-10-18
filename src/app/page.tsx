@@ -1,103 +1,174 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import Aurora from '@/components/backgrounds/aurora';
+import { CSSIcon, HTMLIcon, JavascriptIcon } from '@/components/skill-icons';
+import { ContactSettings, SocialLinks } from '@/config/contact.config';
+import { OrbitingCircles } from '@/ui/orbiting-circles';
+import { File, Mail, Phone } from 'lucide-react';
+import {
+  FaGitAlt,
+  FaGithub,
+  FaJava,
+  FaLinkedin,
+  FaLinux,
+  FaUbuntu,
+} from 'react-icons/fa';
+import {
+  RiCss3Fill,
+  RiFlutterFill,
+  RiHtml5Fill,
+  RiJavascriptFill,
+  RiNextjsFill,
+  RiNodejsFill,
+  RiNpmjsFill,
+  RiReactjsFill,
+  RiTailwindCssFill,
+} from 'react-icons/ri';
+import {
+  SiBlender,
+  SiDrizzle,
+  SiExpress,
+  SiMysql,
+  SiNestjs,
+  SiPrisma,
+  SiRedux,
+} from 'react-icons/si';
+import {
+  BiLogoDocker,
+  BiLogoPostgresql,
+  BiLogoTypescript,
+} from 'react-icons/bi';
+import { FaDartLang } from 'react-icons/fa6';
+import TextType from '@/components/text/typing-text';
+import FuzzyText from '@/components/FuzzyText';
+import { motion } from 'framer-motion';
+
+const typingMessages = [
+  'Full Stack Developer',
+  'Lifelong Learner',
+  'Dedicated Programmer',
+  'Crafting Seamless Web Experiences',
+  'Turning Ideas into Code',
+  'Woke Up and Chose to Code',
+  'Aspiring 10X Developer',
+  'Can Center a Div',
+];
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <div className='flex w-full flex-col'>
+      {/* Background */}
+      <div className='absolute top-0 -z-50 h-full w-full'>
+        <Aurora
+          colorStops={['#97F0D7', '#5AB9F0', '#686FF8', '#8E38FF']}
+          blend={0.5}
+          amplitude={0.5}
+          speed={0.5}
         />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className='flex h-screen flex-col items-center justify-center p-6'>
+        <div className='flex w-full flex-row items-center justify-between px-40'>
+          {/* <TextType
+              text={typingMessages}
+              textColors={['#999999']}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter='|'
+              className='text-muted-foreground text-xl'
+            /> */}
+          {/* Personal Info */}
+
+          <div className='flex w-fit flex-col'>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <FuzzyText baseIntensity={0.1} enableHover={false}>
+                ZHANG
+              </FuzzyText>
+              <FuzzyText baseIntensity={0.1} enableHover={false}>
+                JUNKAI
+              </FuzzyText>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className='mt-8'
+            >
+              {/* Contact Details */}
+              <div className='flex flex-col gap-1'>
+                <h4 className='mb-1 text-xl font-semibold'>Contact Me</h4>
+                <div className='flex w-fit flex-row items-center gap-2 hover:underline'>
+                  <Mail className='size-4' />
+                  <a target='_blank' href={`mailto:${ContactSettings.email}`}>
+                    {ContactSettings.email}
+                  </a>
+                </div>
+                <div className='flex w-fit flex-row items-center gap-2 hover:underline'>
+                  <Phone className='size-4' />
+                  <a
+                    target='_blank'
+                    href={`tel:${ContactSettings.phone.replace(' ', '')}`}
+                  >
+                    {ContactSettings.phone}
+                  </a>
+                </div>
+              </div>
+              {/* Socials */}
+              <div className='mt-4 flex flex-row gap-2'>
+                <a target='_blank' href={SocialLinks.github}>
+                  <FaGithub className='size-6' />
+                </a>
+                <a target='_blank' href={SocialLinks.linkedin}>
+                  <FaLinkedin className='size-6' />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Orbiting Skills */}
+          <div className='relative flex h-[600px] w-150 flex-col items-center justify-center overflow-hidden'>
+            <OrbitingCircles radius={250}>
+              {/* <JavascriptIcon />
+              <HTMLIcon />
+              <CSSIcon /> */}
+              <RiJavascriptFill className='size-10' />
+              <RiHtml5Fill className='size-10' />
+              <RiCss3Fill className='size-10' />
+              <RiReactjsFill className='size-10' />
+              <SiRedux className='size-10' />
+              <BiLogoTypescript className='size-10' />
+              <RiTailwindCssFill className='size-10' />
+              <RiNextjsFill className='size-10' />
+              <BiLogoPostgresql className='size-10' />
+              <SiMysql className='size-10' />
+              <SiDrizzle className='size-10' />
+              <SiPrisma className='size-10' />
+            </OrbitingCircles>
+            <OrbitingCircles radius={180} reverse speed={1.2}>
+              <BiLogoDocker className='size-10' />
+              <RiNodejsFill className='size-10' />
+              <RiNpmjsFill className='size-10' />
+              <FaGitAlt className='size-10' />
+              <SiNestjs className='size-10' />
+              <SiExpress className='size-10' />
+              <RiFlutterFill className='size-10' />
+              <FaDartLang className='size-10' />
+            </OrbitingCircles>
+            <OrbitingCircles radius={100} speed={1.5}>
+              <FaJava className='size-10' />
+              <FaLinux className='size-10' />
+              <SiBlender className='size-10' />
+              <FaUbuntu className='size-10' />
+            </OrbitingCircles>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
     </div>
   );
 }
