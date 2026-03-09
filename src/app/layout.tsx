@@ -1,10 +1,12 @@
 import { ThemeProvider } from '@/context/theme-provider';
 import type { Metadata } from 'next';
 import { Manrope, Inter } from 'next/font/google';
+// @ts-ignore
 import './globals.css';
 import { NavBar } from '@/components/navigation/nav-bar';
 import ClickSpark from '@/components/ClickSpark';
 import { SiteFooter } from '@/components/site-footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const geistSans = Manrope({
   variable: '--font-manrope',
@@ -17,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Portfolio Site',
+  title: 'Zhang Junkai - Aspiring Software Engineer',
   description: 'Welcome to my Portfolio Site!',
 };
 
@@ -51,6 +53,7 @@ export default function RootLayout({
           </ClickSpark>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }
