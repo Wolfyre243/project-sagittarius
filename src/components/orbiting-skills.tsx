@@ -27,42 +27,43 @@ import { FaDartLang } from 'react-icons/fa6';
 import TextType from '@/components/text/typing-text';
 import { OrbitingCircles } from '@/ui/orbiting-circles';
 import { FaGitAlt, FaJava, FaLinux, FaUbuntu } from 'react-icons/fa';
+import { cn } from '@/lib/utils';
 
-export function SkillCircle() {
+export function SkillCircle({ className }: { className?: string }) {
   return (
-    <div className='relative flex h-[600px] w-150 flex-col items-center justify-center overflow-hidden'>
-      <OrbitingCircles radius={250}>
+    <div className={cn('relative flex h-[300px] w-80 flex-col items-center justify-center overflow-hidden', className)}>
+      <OrbitingCircles radius={130}>
         {/* <JavascriptIcon />
               <HTMLIcon />
               <CSSIcon /> */}
-        <RiJavascriptFill className='size-10' />
-        <RiHtml5Fill className='size-10' />
-        <RiCss3Fill className='size-10' />
-        <RiReactjsFill className='size-10' />
-        <SiRedux className='size-10' />
-        <BiLogoTypescript className='size-10' />
-        <RiTailwindCssFill className='size-10' />
-        <RiNextjsFill className='size-10' />
-        <BiLogoPostgresql className='size-10' />
-        <SiMysql className='size-10' />
-        <SiDrizzle className='size-10' />
-        <SiPrisma className='size-10' />
+        <RiJavascriptFill className='size-5' />
+        <RiHtml5Fill className='size-5' />
+        <RiCss3Fill className='size-5' />
+        <RiReactjsFill className='size-5' />
+        <SiRedux className='size-5' />
+        <BiLogoTypescript className='size-5' />
+        <RiTailwindCssFill className='size-5' />
+        <RiNextjsFill className='size-5' />
+        <BiLogoPostgresql className='size-5' />
+        <SiMysql className='size-5' />
+        <SiDrizzle className='size-5' />
+        <SiPrisma className='size-5' />
       </OrbitingCircles>
-      <OrbitingCircles radius={180} reverse speed={1.2}>
-        <BiLogoDocker className='size-10' />
-        <RiNodejsFill className='size-10' />
-        <RiNpmjsFill className='size-10' />
-        <FaGitAlt className='size-10' />
-        <SiNestjs className='size-10' />
-        <SiExpress className='size-10' />
-        <RiFlutterFill className='size-10' />
-        <FaDartLang className='size-10' />
+      <OrbitingCircles radius={90} reverse speed={1.2}>
+        <BiLogoDocker className='size-5' />
+        <RiNodejsFill className='size-5' />
+        <RiNpmjsFill className='size-5' />
+        <FaGitAlt className='size-5' />
+        <SiNestjs className='size-5' />
+        <SiExpress className='size-5' />
+        <RiFlutterFill className='size-5' />
+        <FaDartLang className='size-5' />
       </OrbitingCircles>
-      <OrbitingCircles radius={100} speed={1.5}>
-        <FaJava className='size-10' />
-        <FaLinux className='size-10' />
-        <SiBlender className='size-10' />
-        <FaUbuntu className='size-10' />
+      <OrbitingCircles radius={50} speed={1.5}>
+        <FaJava className='size-5' />
+        <FaLinux className='size-5' />
+        <SiBlender className='size-5' />
+        <FaUbuntu className='size-5' />
       </OrbitingCircles>
     </div>
   );
