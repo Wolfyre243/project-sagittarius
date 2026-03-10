@@ -1,22 +1,23 @@
 import { ThemeProvider } from '@/context/theme-provider';
 import type { Metadata } from 'next';
-import { Manrope, Inter } from 'next/font/google';
+import { Manrope, Inter, Montserrat, JetBrains_Mono } from 'next/font/google';
 // @ts-ignore
 import './globals.css';
 import { NavBar } from '@/components/navigation/nav-bar';
 import ClickSpark from '@/components/ClickSpark';
 import { SiteFooter } from '@/components/site-footer';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import LoadingScreen from '@/components/loading-screen';
 
-const geistSans = Manrope({
-  variable: '--font-manrope',
-  subsets: ['latin'],
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin']
 });
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
-});
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
   title: 'Zhang Junkai - Aspiring Software Engineer',
@@ -31,13 +32,14 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head />
-      <body className={`${geistSans.variable} ${inter.variable} antialiased`}>
+      <body className={`${montserrat.variable} antialiased`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
+          {/* <LoadingScreen /> */}
           <ClickSpark
             sparkColor='#fff'
             sparkSize={10}
