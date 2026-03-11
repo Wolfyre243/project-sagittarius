@@ -11,15 +11,15 @@ export function AboutSection() {
   return (
     <section
       id='about'
-      className='flex w-full flex-col items-center border-b border-dashed'
+      className='flex h-full w-full flex-col items-center border-b border-dashed'
     >
       {/* Backdrop */}
-      <div className='absolute -z-50 h-100 w-full overflow-hidden md:w-4/5'>
+      <div className='absolute -z-50 w-full overflow-hidden md:w-4/5'>
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className='text-accent/40 h-full w-full px-6 py-4'
+          className='text-muted/60 h-full w-full px-8 py-10'
         >
           <h1 className='text-9xl font-medium'>ABOUT</h1>
           <p className='animate-pulse text-sm font-medium'>
@@ -41,7 +41,7 @@ export function AboutSection() {
       </div>
       {/* Main Content */}
       <div className='flex h-full flex-col items-center justify-center border border-y-0 border-dashed md:w-4/5'>
-        <div className='flex w-4xl flex-col gap-4 py-20'>
+        <div className='flex w-4xl flex-col gap-4 py-30'>
           {/* Header Text */}
           <div className='text-5xl font-bold'>
             <h1>Hi, I'm Junkai</h1>

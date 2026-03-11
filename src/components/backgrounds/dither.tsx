@@ -1,10 +1,8 @@
-import { useRef, useEffect, forwardRef } from 'react';
+import { useRef, useState, useEffect, forwardRef } from 'react';
 import { Canvas, useFrame, useThree, ThreeEvent } from '@react-three/fiber';
 import { EffectComposer, wrapEffect } from '@react-three/postprocessing';
 import { Effect } from 'postprocessing';
 import * as THREE from 'three';
-
-import './Dither.css';
 
 const waveVertexShader = `
 precision highp float;
@@ -312,7 +310,7 @@ export default function Dither({
 }: DitherProps) {
   return (
     <Canvas
-      className="dither-container"
+      className="w-full h-full relative"
       camera={{ position: [0, 0, 6] }}
       dpr={1}
       gl={{ antialias: true, preserveDrawingBuffer: true }}

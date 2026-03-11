@@ -1,4 +1,4 @@
-import Dither from '../Dither';
+import Dither from '../backgrounds/dither';
 import { motion } from 'framer-motion';
 import FuzzyText from '../FuzzyText';
 import { Copy, Dot, Mail, Phone, SquareArrowOutUpRight } from 'lucide-react';

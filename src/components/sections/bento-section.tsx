@@ -13,7 +13,7 @@ import { ProjectCardMinimal } from '../projects/project-card';
 export function BentoSection() {
   return (
     <section
-      id='about'
+      id='skills'
       className='flex w-full flex-col items-center border-b border-dashed'
     >
       <div className='grid h-full w-full grid-cols-6 grid-rows-2 border border-y-0 border-dashed md:w-4/5'>
@@ -37,7 +37,7 @@ export function BentoSection() {
                 <Separator />
                 <p className='mb-1 text-sm'>
                   I am familiar with modern web and backend frameworks as well
-                  as databases and ORMs.
+                  as databases and ORMs, seen through my projects and personal ventures.
                 </p>
                 <div className='flex w-full flex-row flex-wrap gap-2'>
                   {skillList
