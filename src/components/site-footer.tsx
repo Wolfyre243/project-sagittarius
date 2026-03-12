@@ -76,7 +76,7 @@ function FooterQuickLinks({ className }: { className?: string }) {
         transition={{ duration: 0.2, ease: 'easeInOut' }}
       >
         <Link
-          href={'/about'}
+          href={'/#about'}
           className='flex flex-row items-center gap-2 text-sm'
         >
           About
