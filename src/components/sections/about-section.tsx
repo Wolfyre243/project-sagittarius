@@ -2,10 +2,9 @@ import { Separator } from '@/ui/separator';
 import { motion } from 'framer-motion';
 
 const aboutMe =
-  'With a strong foundation in technologies like Next.js and a curiosity for solving real-world problems, I love turning ideas into functional, scalable solutions.\n' +
+  'With a strong foundation in full-stack development and a curiosity for solving real-world problems, I love turning ideas into functional, scalable solutions.\n' +
   'As a lifelong learner, I’m constantly exploring new tools and frameworks to enhance my skills. ' +
-  'Whether it’s designing seamless frontend experiences or building robust backend systems, I learn through challenges that push me to grow, believing that there is always room for greater improvement.\n' +
-  'I’m excited to take on opportunities; be it internships, freelance projects, or collaborations, I hope to contribute to innovative teams effectively.';
+  'Whether it’s designing seamless frontend experiences or building robust systems, I learn through challenges that push me to grow, believing that there is always room for greater improvement.';
 
 export function AboutSection() {
   return (

@@ -16,7 +16,7 @@ export function BentoSection() {
       id='skills'
       className='flex w-full flex-col items-center border-b border-dashed'
     >
-      <div className='grid h-full w-full grid-cols-6 grid-rows-2 border border-y-0 border-dashed md:w-4/5'>
+      <div className='grid h-full w-full auto-rows-auto grid-cols-6 border border-y-0 border-dashed md:w-4/5'>
         <div className='col-span-4 col-start-1 flex flex-col border-r border-b border-dashed p-6'>
           <div className='flex flex-row justify-between'>
             <h1 className='text-2xl font-semibold'>Skills</h1>
@@ -31,13 +31,14 @@ export function BentoSection() {
             >
               <SkillCircle />
             </motion.div>
-            <div className='flex h-full w-full flex-col gap-4'>
+            <div className='mb-4 flex h-full w-full flex-col gap-4'>
               <div className='flex flex-col gap-1'>
                 <h1 className='text-xl'>Full-Stack Development</h1>
                 <Separator />
                 <p className='mb-1 text-sm'>
                   I am familiar with modern web and backend frameworks as well
-                  as databases and ORMs, seen through my projects and personal ventures.
+                  as databases and ORMs, seen through my projects and personal
+                  ventures.
                 </p>
                 <div className='flex w-full flex-row flex-wrap gap-2'>
                   {skillList
@@ -125,7 +126,9 @@ export function BentoSection() {
                   className='w-full'
                   key={crypto.randomUUID()}
                 >
-                  <ProjectCardMinimal project={project} />
+                  <Link href={`/projects/${project.id}`}>
+                    <ProjectCardMinimal project={project} />
+                  </Link>
                 </motion.div>
               ))}
             {Array.from({ length: 3 - projectList.length }).map((_, i) => (

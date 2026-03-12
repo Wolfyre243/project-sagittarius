@@ -16,6 +16,7 @@ export const skillList: SkillObject[] = [
   { name: 'Prisma', category: 'fullstack' },
   { name: 'Drizzle', category: 'fullstack' },
   { name: 'PostgreSQL', category: 'fullstack' },
+  { name: 'Redis', category: 'fullstack' },
   { name: 'MySQL', category: 'fullstack' },
   { name: 'Flutter', category: 'mobile' },
   { name: 'Dart', category: 'mobile' },
