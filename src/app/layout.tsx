@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@/context/theme-provider';
 import type { Metadata } from 'next';
-import { Manrope, Inter, Montserrat, JetBrains_Mono } from 'next/font/google';
+import { Manrope, Inter, Montserrat, JetBrains_Mono, Noto_Sans, Oxanium } from 'next/font/google';
 // @ts-ignore
 import './globals.css';
 import { NavBar } from '@/components/navigation/nav-bar';
@@ -17,6 +17,16 @@ const montserrat = Montserrat({
 const jetbrainsMono = JetBrains_Mono({
   variable: '--font-jetbrains-mono',
   subsets: ['latin']
+});
+
+const notoSans = Noto_Sans({
+  variable: '--font-noto-sans',
+  subsets: ['latin']
+})
+
+const oxanium = Oxanium({
+  variable: '--font-oxanium',
+  subsets: ['latin']
 })
 
 export const metadata: Metadata = {
@@ -32,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head />
-      <body className={`${montserrat.variable} antialiased`}>
+      <body className={`${oxanium.variable} antialiased`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'

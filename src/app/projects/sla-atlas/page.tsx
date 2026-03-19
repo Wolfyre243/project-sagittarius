@@ -38,7 +38,7 @@ function PageHeader() {
           </div>
           <p className='text-sm italic'>A book of maps or charts.</p>
         </div>
-        <div className='flex h-full flex-col justify-end text-end p-2'>
+        <div className='flex h-full flex-col justify-end p-2 text-end'>
           <p className=''>In collaboration with</p>
           <h1 className='text-4xl'>Singapore Land Authority</h1>
         </div>
@@ -47,12 +47,47 @@ function PageHeader() {
   );
 }
 
-export default function ProjectSLAAtlasPage() {
+function IntroSection() {
   return (
-    <section className='flex h-screen w-full flex-col items-center border-b border-dashed'>
-      <div className='h-full w-full border border-y-0 border-dashed md:w-4/5'>
-        <PageHeader />
+    <section id='intro' className='mb-20 border-b border-dashed'>
+      <div className='h-6 border-b border-dashed' />
+      <div className='flex flex-row'>
+        {/* Description */}
+        <div className='flex w-full flex-col border-r border-dashed'>
+          <h1 className='mt-6 h-fit w-full border-y border-dashed ps-4 py-1 text-3xl font-semibold'>
+            Project Description
+          </h1>
+          <p className='px-4 py-2'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+        {/* Gallery */}
+        <div className='p-6'>
+          <img
+            src='/projects/sla-atlas/preview.png'
+            width={1200}
+            className='rounded-md shadow'
+          />
+        </div>
       </div>
     </section>
+  );
+}
+
+// TODO: Add interactive side menu
+export default function ProjectSLAAtlasPage() {
+  return (
+    <div className='flex h-screen w-full flex-col items-center border-b border-dashed'>
+      <div className='h-full w-full border border-y-0 border-dashed md:w-4/5'>
+        <PageHeader />
+        <IntroSection />
+      </div>
+    </div>
   );
 }

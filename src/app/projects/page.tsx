@@ -13,7 +13,7 @@ function ProjectsPageHeader() {
           Projects
         </h1>
       </div>
-      <div className='text-muted-foreground h-full w-fit px-4 py-1 text-end text-7xl'>
+      <div className='text-muted h-full w-fit px-4 py-1 text-end text-7xl'>
         <h1>Ready</h1>
         <h1>Set</h1>
         <h1>Build</h1>

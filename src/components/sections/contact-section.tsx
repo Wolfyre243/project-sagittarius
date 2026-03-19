@@ -44,8 +44,7 @@ export function ContactSection() {
             <span className='text-teal-200'>new journey</span>.
           </h1>
           <span className='text-muted-foreground w-full self-center text-center text-lg md:w-2/3'>
-            Got an idea? Great! Let's make it happen. <br />I would be thrilled
-            to be part of your story. <br />
+            Got an idea? Great! Let's make it happen. <br />
             <br />
             Drop me a message, and let&apos;s discuss how I can contribute to
             your project.

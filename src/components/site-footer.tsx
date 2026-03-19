@@ -107,7 +107,7 @@ export function SiteFooter() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className='text-primary-foreground/20 h-full w-full'
+          className='text-primary-foreground/30 h-full w-full'
         >
           <h1 className='text-[350px] font-semibold'>JUNKAI</h1>
         </motion.div>
