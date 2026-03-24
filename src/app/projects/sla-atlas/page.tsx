@@ -1,4 +1,5 @@
 import { projectList } from '@/data/projects';
+import { Badge } from '@/ui/badge';
 import { format } from 'date-fns';
 
 const projectData = projectList.find((p) => p.id === 'sla-atlas');
@@ -49,22 +50,42 @@ function PageHeader() {
 
 function IntroSection() {
   return (
-    <section id='intro' className='mb-20 border-b border-dashed'>
-      <div className='h-6 border-b border-dashed' />
+    <section id='intro' className='mb-10 border-b border-dashed'>
+      <div className='flex flex-col gap-2 border-b border-dashed px-4 py-3'>
+        <p className='text-muted-foreground text-sm'>Technologies</p>
+        <h1 className='text-3xl font-semibold'>Built to last.</h1>
+        <div className='flex flex-row flex-wrap gap-2'>
+          {projectData?.tags?.map((tag) => (
+            <Badge className='text-sm' key={crypto.randomUUID()}>
+              {tag}
+            </Badge>
+          ))}
+        </div>
+      </div>
       <div className='flex flex-row'>
         {/* Description */}
         <div className='flex w-full flex-col border-r border-dashed'>
-          <h1 className='mt-6 h-fit w-full border-y border-dashed ps-4 py-1 text-3xl font-semibold'>
+          <h1 className='mt-6 h-fit w-full border-y border-dashed py-1 ps-4 text-3xl font-semibold'>
             Project Description
           </h1>
           <p className='px-4 py-2'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            This project significantly enhances the{' '}
+            <strong>Singapore Land Authority (SLA)'s</strong> internal system.
+            Tailored for SLA officers and administrators handling intricate
+            datasets across multiple planning areas, the system delivers{' '}
+            <span className='bg-teal-800'>
+              accuracy, transparency, and full traceability
+            </span>
+            . These enhancements replace outdated manual processes, accelerate
+            reliable decision-making, strengthen data integrity, and equip SLA
+            teams to manage increasing land administration demands more
+            efficiently.
+          </p>
+          <p className='px-4 py-2'>
+            I was in charge of the overall system architecture and CICD of the
+            project, ensuring that our GitHub workflows were in check. One key
+            feature I worked on was the batch processing of the building files,
+            to ensure maximum efficiency in the system.
           </p>
         </div>
         {/* Gallery */}
@@ -80,13 +101,26 @@ function IntroSection() {
   );
 }
 
+function FeaturesSection() {
+  return (
+    <section id='features' className='mb-10 h-full border-b border-dashed'>
+      <h1 className='mt-6 h-fit w-full text-center text-3xl font-semibold'>
+        Features
+      </h1>
+      {/* Feature List */}
+      <div className='flex flex-row gap-4'></div>
+    </section>
+  );
+}
+
 // TODO: Add interactive side menu
 export default function ProjectSLAAtlasPage() {
   return (
-    <div className='flex h-screen w-full flex-col items-center border-b border-dashed'>
+    <div className='flex min-h-screen w-full flex-col items-center border-b border-dashed'>
       <div className='h-full w-full border border-y-0 border-dashed md:w-4/5'>
         <PageHeader />
         <IntroSection />
+        <FeaturesSection />
       </div>
     </div>
   );
