@@ -50,7 +50,7 @@ function PageHeader() {
 
 function IntroSection() {
   return (
-    <section id='intro' className='mb-10 border-b border-dashed'>
+    <section id='intro' className='border-b border-dashed'>
       <div className='flex flex-col gap-2 border-b border-dashed px-4 py-3'>
         <p className='text-muted-foreground text-sm'>Technologies</p>
         <h1 className='text-3xl font-semibold'>Built to last.</h1>
@@ -103,12 +103,41 @@ function IntroSection() {
 
 function FeaturesSection() {
   return (
-    <section id='features' className='mb-10 h-full border-b border-dashed'>
-      <h1 className='mt-6 h-fit w-full text-center text-3xl font-semibold'>
+    <section id='features' className='h-full border-b border-dashed'>
+      <h1 className='my-4 h-fit w-full text-center text-5xl font-semibold'>
         Features
       </h1>
       {/* Feature List */}
-      <div className='flex flex-row gap-4'></div>
+      <div className='grid h-full w-full auto-rows-auto grid-cols-6'>
+        <div className='col-span-3 col-start-1 row-span-1 row-start-1 border-y border-dashed'>
+          <div className='flex flex-col gap-2 p-6'>
+            <h1 className='text-2xl font-semibold'>Batch Processing</h1>
+            <div className='flex flex-row gap-4'>
+              <div className='w-full'>
+                <p>Put some cool graphic here</p>
+              </div>
+              <div className='w-full'>
+                <p>
+                  Lorem ipsum oekfokeofkeokf oefkoek eof kokw owfkwo wo fwow
+                  fowkfw
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='col-span-3 col-start-4 row-span-1 row-start-1 border border-r-0 border-dashed'>
+          <h1>testing</h1>
+        </div>
+        <div className='col-span-2 col-start-1 row-span-2 row-start-2 border-r border-dashed'>
+          <h1>testing</h1>
+        </div>
+        <div className='col-span-4 col-start-3 row-span-1 row-start-2 border-b border-dashed'>
+          <h1>testing</h1>
+        </div>
+        <div className='col-span-4 col-start-3 row-span-1 row-start-3 border-dashed'>
+          <h1>testing</h1>
+        </div>
+      </div>
     </section>
   );
 }
