@@ -118,24 +118,23 @@ function FeaturesSection() {
               </div>
               <div className='w-full'>
                 <p>
-                  Lorem ipsum oekfokeofkeokf oefkoek eof kokw owfkwo wo fwow
-                  fowkfw
+                  More content to come
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div className='col-span-3 col-start-4 row-span-1 row-start-1 border border-r-0 border-dashed'>
-          <h1>testing</h1>
+          <h1>More content to come</h1>
         </div>
         <div className='col-span-2 col-start-1 row-span-2 row-start-2 border-r border-dashed'>
-          <h1>testing</h1>
+          <h1>More content to come</h1>
         </div>
         <div className='col-span-4 col-start-3 row-span-1 row-start-2 border-b border-dashed'>
-          <h1>testing</h1>
+          <h1>More content to come</h1>
         </div>
         <div className='col-span-4 col-start-3 row-span-1 row-start-3 border-dashed'>
-          <h1>testing</h1>
+          <h1>More content to come</h1>
         </div>
       </div>
     </section>
