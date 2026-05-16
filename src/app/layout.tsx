@@ -1,23 +1,36 @@
 import { ThemeProvider } from '@/context/theme-provider';
 import type { Metadata } from 'next';
-import { Manrope, Inter } from 'next/font/google';
+import { Manrope, Inter, Montserrat, JetBrains_Mono, Noto_Sans, Oxanium } from 'next/font/google';
+// @ts-ignore
 import './globals.css';
 import { NavBar } from '@/components/navigation/nav-bar';
 import ClickSpark from '@/components/ClickSpark';
 import { SiteFooter } from '@/components/site-footer';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import LoadingScreen from '@/components/loading-screen';
 
-const geistSans = Manrope({
-  variable: '--font-manrope',
-  subsets: ['latin'],
+const montserrat = Montserrat({
+  variable: '--font-montserrat',
+  subsets: ['latin']
 });
 
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
+const jetbrainsMono = JetBrains_Mono({
+  variable: '--font-jetbrains-mono',
+  subsets: ['latin']
 });
+
+const notoSans = Noto_Sans({
+  variable: '--font-noto-sans',
+  subsets: ['latin']
+})
+
+const oxanium = Oxanium({
+  variable: '--font-oxanium',
+  subsets: ['latin']
+})
 
 export const metadata: Metadata = {
-  title: 'Portfolio Site',
+  title: 'Zhang Junkai - Aspiring Software Engineer',
   description: 'Welcome to my Portfolio Site!',
 };
 
@@ -29,13 +42,14 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <head />
-      <body className={`${geistSans.variable} ${inter.variable} antialiased`}>
+      <body className={`${oxanium.variable} antialiased`}>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
+          {/* <LoadingScreen /> */}
           <ClickSpark
             sparkColor='#fff'
             sparkSize={10}
@@ -51,6 +65,7 @@ export default function RootLayout({
           </ClickSpark>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
     </html>
   );
 }
