@@ -9,6 +9,8 @@ import { ArrowRight, SquareArrowOutUpRight, ToolCase } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { projectList } from '@/data/projects';
 import { ProjectCardMinimal } from '../projects/project-card';
+import { awardList } from '@/data/awards';
+import { format } from 'date-fns';
 
 export function BentoSection() {
   return (
@@ -32,13 +34,13 @@ export function BentoSection() {
               <SkillCircle />
             </motion.div>
             <div className='mb-4 flex h-full w-full flex-col gap-4'>
-              <div className='flex flex-col gap-1'>
+              <div className='flex flex-col gap-2'>
                 <h1 className='text-xl'>Full-Stack Development</h1>
                 <Separator />
                 <p className='mb-1 text-sm'>
-                  I am familiar with modern web and backend frameworks as well
-                  as databases and ORMs, seen through my projects and personal
-                  ventures.
+                  I primarily work with modern web and backend frameworks as
+                  well as databases and ORMs, seen through my projects and
+                  personal ventures.
                 </p>
                 <div className='flex w-full flex-row flex-wrap gap-2'>
                   {skillList
@@ -56,14 +58,15 @@ export function BentoSection() {
                     ))}
                 </div>
               </div>
-              <div className='flex flex-col gap-1'>
-                <h1 className='text-xl'>Cloud Systems</h1>
+              <div className='flex flex-col gap-2'>
+                <h1 className='text-xl'>Systems Design</h1>
                 <Separator />
                 <p className='mb-1 text-sm'>
-                  I've had a fair share of experience with Azure and AWS,
-                  wielding fundamental knowledge of cloud systems and
-                  containerisation. I explored Docker in my own time, leading to
-                  my interests in networking and Linux as well.{' '}
+                  I am experienced in designing robust systems to handle
+                  specific use cases in my projects, such as batch processing
+                  and event-driven architectures. I have deployed such system
+                  too, on platforms like Azure, AWS, and Google Cloud, using
+                  tools like Docker for containerisation.
                 </p>
                 <div className='flex w-full flex-row flex-wrap gap-2'>
                   {skillList
@@ -73,7 +76,7 @@ export function BentoSection() {
                     ))}
                 </div>
               </div>
-              <div className='flex flex-col gap-1'>
+              {/* <div className='flex flex-col gap-2'>
                 <h1 className='text-xl'>DevOps</h1>
                 <Separator />
                 <p className='mb-1 text-sm'>
@@ -88,7 +91,7 @@ export function BentoSection() {
                       <Badge key={crypto.randomUUID()}>{skill.name}</Badge>
                     ))}
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           {/* <Button variant={'secondary'} size={'sm'} className='w-fit self-end' asChild>
@@ -99,11 +102,39 @@ export function BentoSection() {
         </div>
         <div className='col-span-2 col-start-5 flex flex-col gap-4 border-b border-dashed p-6'>
           <div className='flex flex-row justify-between'>
-            <h1 className='text-2xl font-semibold'>Certifications</h1>
+            <h1 className='text-2xl font-semibold'>Awards & Certificates</h1>
             <p className='text-muted-foreground font-mono text-sm'>02</p>
           </div>
           <div className='flex h-full w-full flex-col gap-4'>
-            <h1>Nothing to see here yet...</h1>
+            {/* Get most recent awards */}
+            {awardList
+              .sort(
+                (a, b) =>
+                  new Date(b.date).getTime() - new Date(a.date).getTime(),
+              )
+              .slice(0, 3)
+              .map((award, i) => {
+                return (
+                  <Link href={`/awards/${award.id}`} key={i}>
+                    <div
+                      className='flex w-full flex-col gap-1 rounded-md border px-4 py-3 hover:bg-accent/50 transition-all duration-150 ease-in hover:-translate-y-1'
+                    >
+                      <span className='text-muted-foreground text-xs'>
+                        {format(new Date(award.date), 'PPP')}
+                      </span>
+                      <p>{award.name}</p>
+                      <span className='text-muted-foreground text-sm'>
+                        {award.description}
+                      </span>
+                    </div>
+                  </Link>
+                );
+              })}
+            <div className='flex w-full flex-row justify-end gap-4'>
+              <Link href={'/awards'} className='text-muted-foreground text-sm'>
+                See More
+              </Link>
+            </div>
           </div>
         </div>
         <div className='col-span-6 col-start-1 row-span-1 row-start-2 flex flex-col gap-4 p-6'>

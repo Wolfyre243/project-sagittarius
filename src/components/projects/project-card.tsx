@@ -25,10 +25,14 @@ export function ProjectCardMinimal({ project }: { project: ProjectData }) {
       <p className='text-muted-foreground text-sm'>{project.description}</p>
       <div className='text-muted-foreground flex flex-row flex-wrap gap-2'>
         {project.tags?.length !== 0 &&
-          project.tags
-            ?.slice(0, 5)
-            .map((tag) => <Badge variant={'outline'} key={crypto.randomUUID()}>#{tag}</Badge>)}
-        {project.tags && project.tags?.length > 5 && <Badge variant={'outline'}>...</Badge>}
+          project.tags?.slice(0, 5).map((tag) => (
+            <Badge variant={'outline'} key={crypto.randomUUID()}>
+              #{tag}
+            </Badge>
+          ))}
+        {project.tags && project.tags?.length > 5 && (
+          <Badge variant={'outline'}>...</Badge>
+        )}
       </div>
     </SpotlightCard>
   );

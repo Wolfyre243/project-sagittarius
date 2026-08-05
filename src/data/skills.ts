@@ -22,9 +22,10 @@ export const skillList: SkillObject[] = [
   { name: 'Dart', category: 'mobile' },
   { name: 'Git', category: 'devops' },
   { name: 'GitHub', category: 'devops' },
-  { name: 'ESLint', category: 'devops' },
+  // { name: 'ESLint', category: 'devops' },
   { name: 'Azure', category: 'cloud' },
   { name: 'AWS', category: 'cloud' },
   { name: 'Docker', category: 'cloud' },
   { name: 'Linux', category: 'cloud' },
+  { name: 'Cloudflare', category: 'cloud' },
 ]
