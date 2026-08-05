@@ -3,6 +3,7 @@
 import { ProjectCardMinimal } from '@/components/projects/project-card';
 import { projectList } from '@/data/projects';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 function ProjectsPageHeader() {
   return (
@@ -14,9 +15,9 @@ function ProjectsPageHeader() {
         </h1>
       </div>
       <div className='text-muted h-full w-fit px-4 py-1 text-end text-7xl'>
-        <h1>Ready</h1>
-        <h1>Set</h1>
-        <h1>Build</h1>
+        <h3>Ready</h3>
+        <h3>Set</h3>
+        <h3>Build</h3>
       </div>
     </div>
   );
@@ -27,16 +28,18 @@ export default function ProjectsPage() {
     <section className='flex h-screen w-full flex-col items-center border-b border-dashed'>
       <div className='h-full w-full border border-y-0 border-dashed md:w-4/5'>
         <ProjectsPageHeader />
-        <div className='flex h-full w-full flex-row flex-wrap py-4 px-2'>
+        <div className='flex h-full w-full flex-row flex-wrap px-2 py-4'>
           {projectList.map((project, i) => (
             <motion.div
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: (i + 2) / 10 }}
-              className='w-full md:w-1/4 h-fit px-3'
+              className='h-fit w-full px-3 md:w-1/4'
               key={crypto.randomUUID()}
             >
-              <ProjectCardMinimal project={project} />
+              <Link href={`/projects/${project.id}`}>
+                <ProjectCardMinimal project={project} />
+              </Link>
             </motion.div>
           ))}
         </div>
